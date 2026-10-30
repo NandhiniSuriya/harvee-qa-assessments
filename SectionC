@@ -1,0 +1,62 @@
+c1)
+
+1. Gather initial information
+
+I would ask the client:
+- When did the issue start?
+- Is it affecting all users or only specific users?
+- Is it happening for a particular product, payment method, browser, or region?
+- What exact error message are users seeing?
+- Is the issue consistently reproducible or intermittent?
+- Are users able to add products to the cart but failing only at checkout?
+I would also request the affected user details or transaction references, wherever appropriate, without asking for sensitive information such as passwords or full payment details.
+
+2. Check available information
+3. Reproduce and narrow down the issue
+I would try to reproduce the issue using the same conditions reported by the client.I would compare successful and failed checkout attempts, test with different users and browsers, and isolate each step: cart, checkout information, payment, and order confirmation.
+
+4. Identify the root cause
+
+I would compare the results across environments and test data.
+- If the issue occurs consistently across users and environments, it may indicate a product defect.
+- If it happens only with specific user records or order data, I would investigate a data-related issue.
+- If it happens only in one environment or after a configuration change, I would investigate the environment or configuration.
+I would work with developers and the relevant support teams to confirm the root cause using logs and evidence.
+
+5. Communicate with the client
+
+I would send an initial update as soon as I understand the reported impact. I would not wait until the root cause is confirmed.I would explain what is affected in business terms, what we are investigating, and when the next update will be provided. Once the root cause is identified, I would share the fix plan and retest results.
+Finally, I would perform regression testing around checkout and related functionality before recommending closure.
+
+----------------------------------------
+
+
+C2. 
+1. What happened and how I found it
+
+We received a support issue related to file imports. As part of the investigation, I had to validate 12 file imports. Out of those, 10 were successful, while 2 files required further investigation.
+The impact was that those two files could not be confirmed as successfully imported, which affected the expected data-import process.
+
+2. Root cause
+I investigated the issue by validating the import scenarios and checking the behavior of the affected files. I worked with Pramod, the Development Lead, to investigate the two unsuccessful imports.
+hrough this investigation, we identified the underlying issue and shared the findings with the external team for further action.I would explain the exact technical root cause based on the confirmed development findings rather than make assumptions.
+
+3. Explaining it to the client
+I communicated the findings to the relevant stakeholders and development team as part of the support-ticket investigation.
+I explained that 10 out of 12 files were imported successfully, while 2 needed further investigation. I made the status clear so that the team understood which imports were working and which ones still required attention.
+
+4. Stopping it from happening again
+From the QA side, I focused on validating the import scenarios and tracking the unsuccessful files separately.
+
+I would also ensure that:
+- All 12 files are included in the regression test coverage.
+- Successful and unsuccessful import scenarios are validated.
+- Error messages and import results are verified.
+- The two affected files are retested after the external team provides the fix.
+This helps prevent the same issue from going unnoticed in future releases.
+
+5. Looking back
+
+One thing I would improve is preparing a more comprehensive file-import validation checklist upfront, covering different file types and import conditions.
+
+I would also ensure that the root cause, affected files, test evidence, and retest results are documented clearly in the support ticket.
